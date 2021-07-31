@@ -1,0 +1,242 @@
+body{
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    height: 2000px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+div{
+    box-sizing: border-box;
+}
+/* 搜索模块 */
+.search-index{
+    /* 固定定位和父级没有关系  它以屏幕为准 */
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 50%;
+    /* 固定的盒子应该有宽度 */
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    /* background-color: black; */
+    background-color: #f6f6f6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.search{
+    position: relative;
+    height: 26px;
+    flex: 1;
+    line-height: 24px;
+    color: #666;
+    padding-left: 25px;
+    border: 1px solid #ccc;
+    margin: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.search::before{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../image/sprite.png) no-repeat -59px -279px;
+    background-size: 104px auto;
+}
+.user{
+    width: 44px;
+    height: 44px;
+    /* background-color: rgb(214, 0, 0); */
+    font-size: 12px;
+    text-align: center;
+    color: rgb(71, 11, 236);
+}
+
+.user::before{
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: url(../image/sprite.png) no-repeat -59px -194px;
+    background-size: 104px auto;
+    margin: 4px auto -2px;
+}
+
+.focus{
+    padding-top: 44px;
+}
+
+.focus img{
+    width: 100%;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.local-nav{
+    display: flex;
+    height: 64px;
+    background-color: rgb(255, 255, 255);
+    margin: 3px 4px;
+    border-radius: 8px;
+}
+
+.local-nav li{
+    flex: 1;
+    /* background-color: rgb(180, 62, 62); */
+}
+
+.local-nav a{
+    display: flex;
+    flex-direction: column;
+    /* 侧轴居中对齐，因为是单行 */
+    align-items: center;
+}
+
+.local-nav li [class^="local-nav-icon"] {
+    width: 32px;
+    height: 32px;
+    /* background-color: rgb(155, 102, 102); */
+    margin-top: 8px;
+    background: url(../image/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px auto;
+}
+
+.local-nav li .local-nav-icon-icon2{
+    background-position: 0 -32px;
+}
+
+.local-nav li .local-nav-icon-icon3{
+    background-position: 0 -64px;
+}
+
+.local-nav li .local-nav-icon-icon4{
+    background-position: 0 -96px;
+}
+
+.local-nav li .local-nav-icon-icon5{
+    background-position: 0 -128px;
+}
+
+nav{
+/* 把nav设置圆角后，然后overflow不就能剪切超出父盒子的东西，然后把圆角边框显示 */
+    overflow: hidden;
+    margin: 0 4px 3px;
+    border-radius: 8px;
+}
+
+.nav-common{
+    display: flex;
+    height: 88px;
+    /* background-color: rgb(214, 107, 107); */
+}
+
+.nav-common:nth-child(2){
+    margin: 3px 0;
+}
+
+.nav-items{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-shadow: 1px 1px red;
+    text-align: center;
+    font-style: 14px;
+    line-height: 44px;
+}
+
+.nav-items a{
+    flex: 1;
+    color: #000;
+}
+
+.nav-items a:nth-child(1){
+    border-bottom: 3px solid rgb(241, 241, 241);
+}
+
+.nav-items:nth-child(1){
+    border: 0;
+    background: url(../image/hotel.png) no-repeat bottom center;
+    background-size: 121px auto;
+}
+
+.nav-items:nth-child(-n+2){
+    border-right: 3px solid #f2f2f2;
+}
+
+.nav-common:nth-child(1){
+    background: -webkit-linear-gradient(left,rgb(255, 187, 0),rgb(212, 212, 212));
+}
+
+.nav-common:nth-child(2){
+    background: -webkit-linear-gradient(left,rgb(253, 25, 0),rgb(255,153,78));
+}
+
+.nav-common:nth-child(3){
+    background: -webkit-linear-gradient(left,rgb(25, 0, 255),rgb(255,153,78));
+}
+
+/* subnav */
+
+.subnav-entry{
+    display: flex;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 4px;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.subnav-entry li{
+    flex: 20%;
+}
+
+.subnav-entry a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subnav-entry-icon {
+    width: 28px;
+    height: 28px;
+    background-color: rgb(199, 22, 22);
+    margin-top: 4px;
+    background: url(../image/subnav-bg.png) no-repeat;
+background-size: 28px auto;
+}
+
+/* sales-box */
+
+.sales-box{
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    margin: 4px;
+    
+}
+
+
+
+
+
+
+
+
